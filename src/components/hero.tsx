@@ -1,4 +1,4 @@
-
+import hero from "../assets/hero.png";
 
 export default function Hero() {
     return (
@@ -6,12 +6,10 @@ export default function Hero() {
             {/* Background Image */}
             <div
                 className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
-                style={{
-                    backgroundImage:
-                        'url("https://s3-alpha-sig.figma.com/img/5b77/92f1/15d66b0c03d35bc3cffd852533a6a6ab?Expires=1742774400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=EWbo6nM2jF0vr4Watuinmt~OBNSlyOxIhSmV~GoULozMEaXLgO~fRaoRYyJPGWe2cs8euGnlN9bJDeDY8O7JCMU6iPDpf6VKY2pWgjH0x5SjGRTY~D5eBTW47Oe~4TTIwPKA0kotpoS4EQAlawV1dJxcuDFxuWIFenJP5YLQUat4yAZH6e80EJWOPhNiQ8vyeD90P9ZCwN3VlWmYaEBy2sKsLk6MgnvoPWGgWFzCWACPQDnlBHiWMwxXnKm6YcHffi94CC-FADNvpmte10P6cwH4ojOcamM6Miv-mIPJe2A5WmQYMicdDCcUKm0v-QTYwuCUA18x5WyPUfbbsTs3gQ__")',
-                    pointerEvents: 'none',
-                }}
+
             >
+                <img src={hero} alt="Hero" className="w-full h-full object-cover" />
+
                 {/* Dark overlay for better text readability */}
                 {/* <div className="absolute inset-0 bg-black/20"></div> */}
             </div>
