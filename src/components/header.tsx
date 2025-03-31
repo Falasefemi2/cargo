@@ -3,13 +3,14 @@
 import { useState } from "react"
 import { ChevronDown, Menu, X } from "lucide-react"
 import logo from "../assets/logo.png"
+import { ModeToggle } from "./mode-toggle"
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [isDropdownOpen, setIsDropdownOpen] = useState(false)
 
     return (
-        <header className="w-full border-b border-gray-200 bg-white z-[50] relative">
+        <header className="w-full border-b border-gray-200 bg-white dark:bg-black z-[50] relative">
             <div className=" px-4 sm:px-6 lg:px-8">
                 <div className="flex h-16 items-center">
                     {/* Logo */}
@@ -47,22 +48,22 @@ export default function Header() {
                             )}
                         </div>
 
-                        <a href="/about" className="text-[#0E121B] leading-[24px] text-sm font-medium">
+                        <a href="/about" className="text-[#0E121B] leading-[24px] text-sm font-medium dark:text-white">
                             About us
                         </a>
 
-                        <a href="/blog" className="text-[#0E121B] leading-[24px] text-sm font-medium">
+                        <a href="/blog" className="text-[#0E121B] leading-[24px] text-sm font-medium dark:text-white">
                             Blog
                         </a>
 
-                        <a href="/contact" className="text-[#0E121B] leading-[24px] text-sm font-medium">
+                        <a href="/contact" className="text-[#0E121B] leading-[24px] text-sm font-medium dark:text-white">
                             Contact us
                         </a>
                     </nav>
 
                     {/* Right side buttons */}
                     <div className="hidden md:flex items-center space-x-4 ml-auto">
-                        <a href="/partner" className="text-[#0E121B] leading-[24px] text-sm font-medium">
+                        <a href="/partner" className="text-[#0E121B] leading-[24px] text-sm font-medium dark:text-white">
                             Partner with Us
                         </a>
 
@@ -73,9 +74,12 @@ export default function Header() {
                             Explore Our Ecosystem
                         </a>
                     </div>
+                    <div className="ml-4 hidden md:inline-block">
+                        <ModeToggle />
+                    </div>
 
                     {/* Mobile menu button */}
-                    <div className="md:hidden ml-auto">
+                    <div className="md:hidden ml-auto flex items-center space-x-2">
                         <button
                             type="button"
                             className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100"
@@ -88,6 +92,7 @@ export default function Header() {
                                 <Menu className="block h-6 w-6" aria-hidden="true" />
                             )}
                         </button>
+                        <ModeToggle />
                     </div>
                 </div>
             </div>
@@ -98,7 +103,7 @@ export default function Header() {
                     <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                         <div className="relative">
                             <button
-                                className="block w-full text-left px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50"
+                                className="block w-full text-left px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-black"
                                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                             >
                                 <div className="flex items-center justify-between">
@@ -109,32 +114,32 @@ export default function Header() {
 
                             {isDropdownOpen && (
                                 <div className="pl-4">
-                                    <a href="#" className="block px-3 py-2 text-base font-medium text-gray-500 hover:bg-gray-50">
+                                    <a href="#" className="block px-3 py-2 text-base font-medium text-gray-500 hover:bg-gray-50 dark:text-white dark:hover:bg-black">
                                         Product 1
                                     </a>
-                                    <a href="#" className="block px-3 py-2 text-base font-medium text-gray-500 hover:bg-gray-50">
+                                    <a href="#" className="block px-3 py-2 text-base font-medium text-gray-500 hover:bg-gray-50 dark:text-white dark:hover:bg-black">
                                         Product 2
                                     </a>
-                                    <a href="#" className="block px-3 py-2 text-base font-medium text-gray-500 hover:bg-gray-50">
+                                    <a href="#" className="block px-3 py-2 text-base font-medium text-gray-500 hover:bg-gray-50 dark:text-white dark:hover:bg-black">
                                         Product 3
                                     </a>
                                 </div>
                             )}
                         </div>
 
-                        <a href="/about" className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50">
+                        <a href="/about" className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-black">
                             About us
                         </a>
 
-                        <a href="/blog" className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50">
+                        <a href="/blog" className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-black">
                             Blog
                         </a>
 
-                        <a href="/contact" className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50">
+                        <a href="/contact" className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-black">
                             Contact us
                         </a>
 
-                        <a href="/partner" className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50">
+                        <a href="/partner" className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-black ">
                             Partner with Us
                         </a>
 

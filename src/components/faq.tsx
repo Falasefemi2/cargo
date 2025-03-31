@@ -31,9 +31,9 @@ export default function FAQSection() {
     ]
 
     return (
-        <div className="w-full bg-[#F7F7F7] px-4 py-12">
+        <div className="w-full bg-[#F7F7F7] px-4 py-12 dark:bg-black">
             <div className="max-w-7xl mx-auto">
-                <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+                <div className="bg-white dark:bg-black rounded-lg shadow-sm overflow-hidden">
                     <div className="grid lg:grid-cols-2 items-start">
                         {/* FAQ Section */}
                         <div className="p-8 space-y-6">
@@ -41,8 +41,8 @@ export default function FAQSection() {
                             <Accordion type="single" collapsible className="w-full">
                                 {faqs.map((faq, index) => (
                                     <AccordionItem key={index} value={`item-${index}`}>
-                                        <AccordionTrigger className="text-left text-[#000000] font-medium">{faq.question}</AccordionTrigger>
-                                        <AccordionContent className="text-[#767676] font-light">{faq.answer}</AccordionContent>
+                                        <AccordionTrigger className="text-left text-[#000000] dark:text-white font-medium">{faq.question}</AccordionTrigger>
+                                        <AccordionContent className="text-[#767676] dark:text-white font-light">{faq.answer}</AccordionContent>
                                     </AccordionItem>
                                 ))}
                             </Accordion>
